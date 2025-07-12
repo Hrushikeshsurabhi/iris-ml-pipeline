@@ -1,8 +1,10 @@
-# Iris Dataset Machine Learning Project
+# Iris ML Pipeline
+
+A comprehensive machine learning pipeline for the Iris dataset with modular components for data processing, model training, evaluation, and API deployment.
 
 ## 📊 Project Overview
 
-This comprehensive machine learning project analyzes the famous Iris dataset using various ML techniques and concepts. The project demonstrates data exploration, preprocessing, model training, evaluation, and deployment.
+This comprehensive machine learning project analyzes the famous Iris dataset using various ML techniques and concepts. The project demonstrates data exploration, preprocessing, model training, evaluation, and deployment through a modular, production-ready architecture.
 
 ## 🎯 Project Goals
 
@@ -12,23 +14,51 @@ This comprehensive machine learning project analyzes the famous Iris dataset usi
 - Demonstrate feature engineering and selection
 - Showcase model deployment and API creation
 - Provide interactive visualizations and dashboards
+- Implement clustering analysis
+- Create a modular, maintainable codebase
 
 ## 📁 Project Structure
 
 ```
-iris-ml-project/
+iris-ml-pipeline/
 ├── data/                   # Dataset files
+│   └── iris.csv           # Iris dataset
 ├── notebooks/              # Jupyter notebooks for analysis
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_model_training.ipynb
+│   ├── 03_clustering_analysis.ipynb
+│   └── 04_api_demo.ipynb
 ├── src/                    # Source code
 │   ├── data/              # Data processing modules
+│   │   ├── __init__.py
+│   │   ├── data_loader.py
+│   │   └── preprocessor.py
 │   ├── models/            # ML model implementations
-│   ├── visualization/     # Plotting and visualization
+│   │   ├── __init__.py
+│   │   ├── base_model.py
+│   │   ├── classifier.py
+│   │   └── clustering.py
 │   ├── evaluation/        # Model evaluation metrics
-│   └── api/               # API implementation
+│   │   ├── __init__.py
+│   │   ├── metrics.py
+│   │   └── visualizer.py
+│   ├── api/               # API implementation
+│   │   ├── __init__.py
+│   │   ├── app.py
+│   │   └── models.py
+│   └── utils/             # Utility functions
+│       ├── __init__.py
+│       └── helpers.py
 ├── models/                 # Trained model files
 ├── reports/                # Generated reports and visualizations
 ├── tests/                  # Unit tests
+│   ├── __init__.py
+│   ├── test_data_loader.py
+│   ├── test_classifier.py
+│   ├── test_clustering.py
+│   └── test_api.py
 ├── requirements.txt        # Python dependencies
+├── main.py                 # Main pipeline execution
 ├── config.yaml            # Configuration file
 └── README.md              # This file
 ```
@@ -37,16 +67,16 @@ iris-ml-project/
 
 1. **Clone and Setup**
    ```bash
-   git clone <repository-url>
-   cd iris-ml-project
+   git clone git@github.com:Hrushikeshsurabhi/iris-ml-pipeline.git
+   cd iris-ml-pipeline
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    pip install -r requirements.txt
    ```
 
-2. **Run Analysis**
+2. **Run Complete Pipeline**
    ```bash
-   python src/main.py
+   python main.py
    ```
 
 3. **Start API Server**
@@ -59,9 +89,15 @@ iris-ml-project/
    jupyter notebook notebooks/
    ```
 
+5. **Run Tests**
+   ```bash
+   pytest tests/
+   ```
+
 ## 📈 Features
 
 ### Data Analysis
+- Automated data loading and preprocessing
 - Exploratory Data Analysis (EDA)
 - Statistical analysis and insights
 - Data visualization with multiple chart types
@@ -90,6 +126,7 @@ iris-ml-project/
 - ROC curves
 - Precision-Recall curves
 - Model comparison metrics
+- Clustering evaluation metrics
 
 ### Advanced Concepts
 - Feature engineering
@@ -97,6 +134,14 @@ iris-ml-project/
 - Model ensemble methods
 - Bias-variance analysis
 - Overfitting detection and prevention
+- Clustering analysis and visualization
+
+### API & Deployment
+- RESTful API with FastAPI
+- Model prediction endpoints
+- Interactive API documentation
+- Health check endpoints
+- Input validation and error handling
 
 ## 🛠️ Technologies Used
 
@@ -104,9 +149,10 @@ iris-ml-project/
 - **Data Science:** pandas, numpy, scikit-learn
 - **Visualization:** matplotlib, seaborn, plotly
 - **Deep Learning:** tensorflow, keras
-- **API:** flask, fastapi
+- **API:** fastapi, uvicorn
 - **Testing:** pytest
 - **Notebooks:** jupyter
+- **Configuration:** pyyaml
 
 ## 📊 Dataset Information
 
@@ -127,6 +173,29 @@ The Iris dataset contains 150 samples of iris flowers with 4 features:
 - Versicolor and Virginica show some overlap
 - Petal measurements are more discriminative than sepal measurements
 - Dataset is well-balanced with 50 samples per class
+- K-means clustering effectively identifies 3 distinct groups
+
+## 🔧 Configuration
+
+The project uses a `config.yaml` file for configuration management:
+- Model parameters
+- Data paths
+- API settings
+- Visualization preferences
+
+## 🧪 Testing
+
+Comprehensive unit tests are included for:
+- Data loading and preprocessing
+- Model training and prediction
+- Clustering algorithms
+- API endpoints
+- Utility functions
+
+Run tests with:
+```bash
+pytest tests/
+```
 
 ## 📝 License
 
@@ -134,4 +203,12 @@ This project is open source and available under the MIT License.
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request. 
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## 📞 Contact
+
+For questions or support, please open an issue on GitHub.
+
+---
+
+**Repository:** https://github.com/Hrushikeshsurabhi/iris-ml-pipeline 
