@@ -1,0 +1,78 @@
+# Core Data Science Libraries
+numpy
+pandas
+scipy
+
+# Machine Learning
+scikit-learn
+tensorflow
+keras
+
+# Visualization
+matplotlib
+seaborn
+plotly
+bokeh
+
+# Jupyter and Notebooks
+jupyter
+ipykernel
+notebook
+
+# API and Web Framework
+flask
+fastapi
+uvicorn
+pydantic
+
+# Data Processing and Utilities
+joblib
+pickle-mixin
+pyyaml
+
+# Testing
+pytest
+pytest-cov
+
+# Additional ML Libraries
+xgboost
+lightgbm
+catboost
+
+# Statistical Analysis
+statsmodels
+
+# Interactive Widgets
+ipywidgets
+
+# Progress Bars
+tqdm
+
+# Configuration Management
+python-dotenv
+
+# Data Validation
+great-expectations
+
+# Model Interpretability
+shap
+lime
+
+# Hyperparameter Tuning
+optuna
+hyperopt
+
+# Feature Selection
+feature-engine
+
+# Model Persistence
+mlflow
+
+# Data Quality
+pandera
+
+# Performance Monitoring
+memory-profiler
+
+# Flask CORS
+flask-cors 

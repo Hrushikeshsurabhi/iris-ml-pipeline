@@ -1,0 +1,143 @@
+# Iris ML Project Configuration
+
+# Data Configuration
+data:
+  raw_data_path: "data/raw/iris.csv"
+  processed_data_path: "data/processed/"
+  train_data_path: "data/processed/train.csv"
+  test_data_path: "data/processed/test.csv"
+  validation_data_path: "data/processed/validation.csv"
+
+# Model Configuration
+models:
+  save_path: "models/"
+  model_names:
+    - "logistic_regression"
+    - "svm"
+    - "random_forest"
+    - "decision_tree"
+    - "knn"
+    - "naive_bayes"
+    - "neural_network"
+    - "xgboost"
+    - "lightgbm"
+
+# Training Configuration
+training:
+  test_size: 0.2
+  validation_size: 0.1
+  random_state: 42
+  cv_folds: 5
+  n_jobs: -1
+
+# Hyperparameter Tuning
+hyperparameter_tuning:
+  n_trials: 100
+  timeout: 300
+  random_state: 42
+
+# Model Parameters
+model_params:
+  logistic_regression:
+    C: [0.1, 1.0, 10.0]
+    penalty: ["l1", "l2"]
+    solver: ["liblinear", "saga"]
+  
+  svm:
+    C: [0.1, 1.0, 10.0]
+    kernel: ["rbf", "linear", "poly"]
+    gamma: ["scale", "auto"]
+  
+  random_forest:
+    n_estimators: [50, 100, 200]
+    max_depth: [3, 5, 7, None]
+    min_samples_split: [2, 5, 10]
+    min_samples_leaf: [1, 2, 4]
+  
+  decision_tree:
+    max_depth: [3, 5, 7, None]
+    min_samples_split: [2, 5, 10]
+    min_samples_leaf: [1, 2, 4]
+    criterion: ["gini", "entropy"]
+  
+  knn:
+    n_neighbors: [3, 5, 7, 9, 11]
+    weights: ["uniform", "distance"]
+    metric: ["euclidean", "manhattan", "minkowski"]
+  
+  neural_network:
+    hidden_layer_sizes: [(50,), (100,), (50, 25), (100, 50)]
+    activation: ["relu", "tanh"]
+    learning_rate_init: [0.001, 0.01, 0.1]
+    max_iter: [500, 1000]
+
+# Evaluation Configuration
+evaluation:
+  metrics:
+    - "accuracy"
+    - "precision"
+    - "recall"
+    - "f1_score"
+    - "roc_auc"
+  cv_scoring: "accuracy"
+  save_plots: true
+  plot_path: "reports/figures/"
+
+# Visualization Configuration
+visualization:
+  style: "seaborn-v0_8"
+  figsize: [12, 8]
+  dpi: 300
+  save_format: "png"
+  color_palette: "Set2"
+
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  debug: false
+  reload: true
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/iris_ml.log"
+
+# Feature Engineering
+feature_engineering:
+  create_ratios: true
+  create_polynomials: true
+  polynomial_degree: 2
+  feature_selection_method: "mutual_info"
+
+# Clustering Configuration
+clustering:
+  n_clusters: 3
+  algorithms:
+    - "kmeans"
+    - "hierarchical"
+    - "dbscan"
+  
+  kmeans:
+    n_init: 10
+    max_iter: 300
+  
+  hierarchical:
+    linkage: ["ward", "complete", "average"]
+    distance_threshold: 0.5
+
+# PCA Configuration
+pca:
+  n_components: 2
+  explained_variance_threshold: 0.95
+
+# Ensemble Methods
+ensemble:
+  voting_method: "soft"
+  weights: "auto"
+  include_models:
+    - "logistic_regression"
+    - "random_forest"
+    - "svm"
+    - "neural_network" 
